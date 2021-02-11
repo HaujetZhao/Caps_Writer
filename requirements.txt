@@ -1,5 +1,6 @@
 setuptools
 pyaudio
 keyboard
-aliyunsdkcore
+aliyun-python-sdk-core
 PySide2
+pywin32

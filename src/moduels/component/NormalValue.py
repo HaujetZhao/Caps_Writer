@@ -5,7 +5,7 @@ import subprocess
 
 class NormalValue():
     样式文件 = 'misc/style.css'
-    软件版本 = '2.0.0'
+    软件版本 = '2.1.0'
 
     主窗口 = None
     托盘 = None

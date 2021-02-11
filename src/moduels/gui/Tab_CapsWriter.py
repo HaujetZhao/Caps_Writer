@@ -96,6 +96,9 @@ CapsWriter，顾名思义，就是按下大写锁定键来打字的工具。它�
         引擎名称 = self.引擎选择下拉框.currentText()
         if 引擎名称 == '': return
         self.启动按钮.setDisabled(True)
+        self.引擎选择下拉框.setDisabled(True)
+        self.parent().parent().setTabEnabled(1, False)
+        self.parent().parent().setTabEnabled(2, False)
         self.停止按钮.setEnabled(True)
         result = 常量.数据库连接.execute(f'''select * from {常量.语音引擎表单名} where 引擎名称 = :引擎名称''',
                                   {'引擎名称': 引擎名称}).fetchone()
@@ -113,6 +116,9 @@ CapsWriter，顾名思义，就是按下大写锁定键来打字的工具。它�
             # print(self.引擎线程.isRunning())
             self.引擎线程 = None
             self.启动按钮.setEnabled(True)
+            self.引擎选择下拉框.setEnabled(True)
+            self.parent().parent().setTabEnabled(1, True)
+            self.parent().parent().setTabEnabled(2, True)
             self.停止按钮.setDisabled(True)
 
 
